@@ -9,7 +9,6 @@ func main() {
 		panic("error opening file")
 	}
 	defer f.Close()
-
 	o, err := os.Create("myfile.dec")
 	if err != nil {
 		panic("error opening file")
@@ -27,7 +26,6 @@ func main() {
 			break
 		}
 		b2 = b1[0] ^ key
-
 		w.WriteByte(b2)
 	}
 	w.Flush()
