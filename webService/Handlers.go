@@ -38,21 +38,23 @@ func hhf_getCount(w http.ResponseWriter, r *http.Request) {
 }
 
 type t_count struct {
-	name  string `json: "name"`
-	count int    `json: "count"`
+	id      int    `json: "id"`
+	content string `json: "content"`
 }
 
 func hhf_getCount2(w http.ResponseWriter, r *http.Request) {
 
-	j := "{count:13000}"
+	//j := "{id:1,content:Hello, World!}"
+	//m := t_count{1345, "Hello World!"}
+
+	b := []byte(`{"id":999999,"content":"Hello World!"}`)
 
 	//BSON, _ := json.NewEncoder(w)
 	//log.Println(BSON)
 
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
+	//w.Header().Set("Access-Control-Allow-Credentials", "(optional)")
 	w.WriteHeader(http.StatusOK)
-	if err := json.NewEncoder(w).Encode(j); err != nil {
-		panic(err)
-	}
+	w.Write(b)
 }

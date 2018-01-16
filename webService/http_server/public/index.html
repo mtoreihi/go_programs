@@ -1,17 +1,17 @@
 <!doctype html>
 <html ng-app="demo">
 	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=11"/>
 		<title>Hello AngularJS</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script src="angular.min.js"></script>
     	<script src="hello.js"></script>
 	</head>
 
 	<body>
 		<div ng-controller="Hello">
-		<div ng-repeat="x in greeting">
-			<p>The string is {{x}}</p>
-			<p>The content is {{x.content}}</p>
-			<p>The id is {{x.id}}</p>
+			<p>The string is {{greeting}}</p>
+			<p>The content is {{greeting.content}}</p>
+			<p>The id is {{greeting.id}}</p>
 		</div>
 		</div>
 	</body>
