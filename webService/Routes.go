@@ -41,4 +41,10 @@ var routes = Routes{
 		"/getCount",
 		hhf_getCount,
 	},
+	Route{
+		"getCount2",
+		"GET",
+		"/getCount2",
+		hhf_getCount2,
+	},
 }
