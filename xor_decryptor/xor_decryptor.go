@@ -15,7 +15,7 @@ func main() {
 	}
 	defer o.Close()
 
-	var key byte = 0x13
+	var key byte = 0x78
 	b1 := make([]byte, 1)
 	var b2 byte
 	w := bufio.NewWriter(o)
