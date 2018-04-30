@@ -3,10 +3,8 @@ package main
 import (
 "crypto/aes"
 "crypto/cipher"
-"crypto/rand"
 "errors"
 "fmt"
-"io"
 "log"
 "encoding/base64"
 )
@@ -39,14 +37,16 @@ func encrypt(plaintext []byte, key []byte) ([]byte, error) {
 	}
 
 	gcm, err := cipher.NewGCM(c)
+
 	if err != nil {
 		return nil, err
 	}
 
-	nonce := make([]byte, gcm.NonceSize())
-	if _, err = io.ReadFull(rand.Reader, nonce); err != nil {
+	//nonce := make([]byte, gcm.NonceSize())
+	nonce := []byte("1234567890--")
+	/*if _, err = io.ReadFull(rand.Reader, nonce); err != nil {
 		return nil, err
-	}
+	}*/
 
 	return gcm.Seal(nonce, nonce, plaintext, nil), nil
 }
