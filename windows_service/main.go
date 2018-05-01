@@ -17,8 +17,6 @@ func myserver() {
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		log.Fatal("Listen and Server: ", err)
-	} else {
-		log.Fatal("web server started.")
 	}
 }
 
@@ -45,8 +43,8 @@ func (p *program) Stop(s service.Service) error {
 func main() {
 	svcConfig := &service.Config{
 		Name:        "ParsRightLicenseManager",
-		DisplayName: "Go Service Example",
-		Description: "This is an example Go service.",
+		DisplayName: "ParsRight License Manager",
+		Description: "License manager for ParsRight.",
 	}
 
 	prg := &program{}
