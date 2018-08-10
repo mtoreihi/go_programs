@@ -16,7 +16,7 @@ func myserver() {
 	//err := http.ListenAndServeTLS(":8443", "F:/Go/go_programs/windows_service/server.crt", "F:/Go/go_programs/windows_service/server.key", nil)
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
-		log.Fatal("Listen and Server: ", err)
+		log.Fatal("Listen and Serve: ", err)
 	}
 }
 
